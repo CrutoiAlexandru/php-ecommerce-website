@@ -4,59 +4,28 @@
   --white: rgba(255, 255, 255, 0.1);
 }
 
+/* global html features */
 html {
   font-family: "comic sans ms";
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: left;
   background-color: var(--background);
   color: white;
-  overflow-x: hidden;
 }
 
-div {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  gap: 100px;
-  justify-content: left;
-}
-
-div > h1 {
-  text-align: left;
-  font-size: 6.25vw;
-}
-
+/* easily mark spans as red */
 span {
   color: var(--red);
 }
 
 form {
-  margin-left: 100px;
   display: flex;
   flex-direction: column;
   background-color: var(--white);
-  width: 30vw;
-  height: 75vh;
   justify-content: space-around;
   align-items: center;
   transition-duration: 200ms;
-  box-shadow: 0px 0px 10px grey;
-}
-
-form > input {
-  width: 75%;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.4);
-  color: var(--background);
-  font-weight: bold;
-}
-
-form > input:focus {
-  background-color: rgba(255, 255, 255, 0.9);
 }
 
 form > button {
@@ -65,6 +34,7 @@ form > button {
   border-radius: 5px;
   font-weight: bold;
   border: none;
+  background-color: grey;
   color: var(--background);
 }
 
@@ -74,7 +44,6 @@ form > button:hover {
 }
 
 a {
-  margin-left: 10vw;
   text-decoration: none;
   color: white;
 }
