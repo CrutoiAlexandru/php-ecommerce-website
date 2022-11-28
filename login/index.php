@@ -16,20 +16,20 @@
     <div>
         <form action="/src/auth.php" method="post">
             <label for="username">Username</label>
-            <input type="text" name="username">
+            <input type="text" name="username" required>
 
             <label for="password">Password</label>
-            <input type="password" name="password">
+            <input type="password" name="password" required>
 
             <button>Submit</button>
         </form>
 
-        <h1><span>Pitshop</span><br>Your pitstop, for a quick shop</h1>
+        <h1><span>Pitshop LogIn</span><br>Your pitstop, for a quick shop</h1>
     </div>
 
     <div style="height: 10px;"></div>
 
-    <a href="/src/register.php">Don't have an account yet?</a>
+    <a href="/register">Don't have an account yet?</a>
 </body>
 
 </html>

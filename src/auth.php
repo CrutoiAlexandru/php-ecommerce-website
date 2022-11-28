@@ -1,24 +1,23 @@
 <?php
-$sql_servername = 'localhost';
-$sql_username = 'root';
-$sql_password = '';
-$sql_dbname = 'ecommerce';
+require 'connect.php';
 
-$conn = new mysqli($sql_servername, $sql_username, $sql_password, $sql_dbname);
+$conn = db_connect();
+$username = $_POST['username'];
+$password = hash('sha256', $_POST['password']);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM users WHERE username = '$_POST[username]' AND password = '$_POST[password]';";
+$sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password';";
 
 $result = $conn->query($sql);
 
 if ($result->num_rows == 1) {
+    $conn->close();
     header('Location: /home');
 } else {
-    header('Location: /src/register.php');
+    $conn->close();
+    header('Location: /register');
 }
-
-$conn->close();
 ?>

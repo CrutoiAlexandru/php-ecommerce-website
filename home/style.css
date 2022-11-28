@@ -48,5 +48,5 @@ div > div {
   display: flex;
   justify-content: space-around;
   margin-top: 2vh;
-  background-color: red;
+  background-color: var(--red);
 }

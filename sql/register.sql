@@ -1,9 +1,10 @@
 CREATE TABLE users (
-    id INT AUTO_INCREMENT,
-    username VARCHAR(30), 
-    password VARCHAR(300), 
-    mail VARCHAR(30), 
+    id INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(30) NOT NULL, 
+    password VARCHAR(64) NOT NULL, 
+    email VARCHAR(30) NOT NULL, 
+    token VARCHAR(64),
     PRIMARY KEY (id));
 
 INSERT INTO users (username, password, mail) 
-    VALUES ('user1', 'pas1', 'mail1');
+    VALUES ('user1', 'pas1', 'email1');
