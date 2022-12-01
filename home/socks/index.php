@@ -11,7 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="/global/style.css">
-    <link rel="stylesheet" href="../beanies/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href='https://css.gg/shopping-cart.css' rel='stylesheet'>
 </head>
@@ -53,23 +53,23 @@ session_start();
 
     <div class="grid">
         <div class="grid-item">
-            <img src="/share/img/beanies/beanie1.jpg" alt="beanie1">
+            <img src="/share/img/socks/sock1.jpg" alt="sock1">
             <form method="get" action="/src/add_cart.php">
-                <input type="submit" name="product" value="beanie1"></input>
+                <input type="submit" name="product" value="sock1"></input>
             </form>
         </div>
 
         <div class="grid-item">
-            <img src="/share/img/beanies/beanie2.jpg" alt="beanie2">
+            <img src="/share/img/socks/sock2.jpg" alt="sock2">
             <form method="get" action="/src/add_cart.php">
-                <input type="submit" name="product" value="beanie2"></input>
+                <input type="submit" name="product" value="sock2"></input>
             </form>
         </div>
 
         <div class="grid-item">
-            <img src="/share/img/beanies/beanie3.jpg" alt="beanie3">
+            <img src="/share/img/socks/sock3.jpg" alt="sock3">
             <form method="get" action="/src/add_cart.php">
-                <input type="submit" name="product" value="beanie3"></input>
+                <input type="submit" name="product" value="sock3"></input>
             </form>
         </div>
     </div>
