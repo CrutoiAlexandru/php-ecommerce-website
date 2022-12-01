@@ -60,7 +60,7 @@ require '../src/connect.php';
     <form method="get" action="/src/order.php">
         <label for="address">Address</label>
         <input type="text" name="address" required>
-        <input type="button" value="Order"></input>
+        <input type="submit" value="Order"></input>
     </form>
 </body>
 
