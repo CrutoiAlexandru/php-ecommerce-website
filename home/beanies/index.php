@@ -31,7 +31,6 @@ session_start();
                 <i class="gg-shopping-cart">
                 </i>
             </a>
-
             <a href="/profile">
                 <h2>Profile</h2>
             </a>
@@ -53,20 +52,25 @@ session_start();
     } ?>
 
     <div class="grid">
-        <div class="grid-categories">
-            <a href="/home/beanies" class="grid-categories-link" style="color: white;">
-                <h1>Beanies</h1>
-            </a>
+        <div class="grid-item">
+            <img src="/share/img/beanies/beanie1.jpg" alt="beanie1">
+            <form method="get" action="/src/add_cart.php">
+                <input type="submit" name="product" value="beanie1"></input>
+            </form>
         </div>
-        <div class="grid-categories">
-            <a href="/home/hoodies" class="grid-categories-link" style="color: white;">
-                <h1>Hoodies</h1>
-            </a>
+
+        <div class="grid-item">
+            <img src="/share/img/beanies/beanie2.jpg" alt="beanie2">
+            <form method="get" action="/src/add_cart.php">
+                <input type="submit" name="product" value="beanie2"></input>
+            </form>
         </div>
-        <div class="grid-categories">
-            <a href="/home/socks" class="grid-categories-link" style="color: white;">
-                <h1>Socks</h1>
-            </a>
+
+        <div class="grid-item">
+            <img src="/share/img/beanies/beanie3.jpg" alt="beanie3">
+            <form method="get" action="/src/add_cart.php">
+                <input type="submit" name="product" value="beanie3"></input>
+            </form>
         </div>
     </div>
 </body>

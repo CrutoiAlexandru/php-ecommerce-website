@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'connect.php';
 
 $conn = db_connect();
@@ -22,7 +23,10 @@ if ($result->num_rows >= 1) {
 
     $conn->close();
 } else {
-    $insert = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email');";
+    # create a unique token used for user based operations
+    $token = hash('sha256', $username . $password);
+    $_SESSION['token'] = $token;
+    $insert = "INSERT INTO users (username, password, email, token) VALUES ('$username', '$password', '$email', '$token');";
 
     if ($conn->query($insert) === TRUE) {
         echo "New record created successfully";

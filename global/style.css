@@ -1,5 +1,6 @@
 :root {
   --red: rgb(255, 0, 111);
+  --red-alpha: rgba(255, 0, 111, 0.1);
   --background: rgb(40, 40, 40);
   --white: rgba(255, 255, 255, 0.1);
 }
@@ -49,5 +50,9 @@ a {
 }
 
 a:focus {
+  color: var(--red);
+}
+
+a:hover {
   color: var(--red);
 }

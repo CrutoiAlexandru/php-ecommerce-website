@@ -50,18 +50,18 @@ div > div {
   margin-top: 2vh;
 }
 
-.grid-categories {
+.grid-item {
   margin-right: 0;
   height: 60vh;
   width: 33%;
   background-color: var(--red-alpha);
 }
 
-.grid-categories:hover {
+.grid-item:hover {
   background-color: var(--red);
 }
 
-.grid-categories-link {
+.grid-item-link {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +34,12 @@
     <div style="height: 10px;"></div>
 
     <a href="/register">Don't have an account yet?</a>
+
+    <?php
+    if (array_key_exists('token', $_SESSION)) {
+        header('Location: /home');
+    }
+    ?>
 </body>
 
 </html>
