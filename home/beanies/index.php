@@ -26,7 +26,9 @@ session_start();
             </a>
         </h2>
         <div>
-            <h2>About us</h2>
+            <a href="/aboutus">
+                <h2>About us</h2>
+            </a>
             <a href="/cart">
                 <i class="gg-shopping-cart">
                 </i>

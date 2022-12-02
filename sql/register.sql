@@ -9,8 +9,12 @@ CREATE TABLE users (
 CREATE TABLE orders (
     id INT NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL, 
-    product VARCHAR(300), 
-    address VARCHAR(300), 
+    product VARCHAR(300) NOT NULL, 
+    country VARCHAR(20) NOT NULL,
+    county VARCHAR(20),
+    city VARCHAR(20) NOT NULL,
+    street VARCHAR(20) NOT NULL,
+    number VARCHAR(10) NOT NULL,
     PRIMARY KEY (id));
 
 CREATE TABLE cart (

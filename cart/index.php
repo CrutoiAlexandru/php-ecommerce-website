@@ -54,13 +54,28 @@ require '../src/connect.php';
         return;
     }
 
-    echo $row['product'];
+    $final = str_replace(',', '<br>', $row['product']);
+    echo "<h1 style='text-align: center;'><span>$final</span></h1>";
     $conn->close();
     ?>
+
     <form method="get" action="/src/order.php">
-        <label for="address">Address</label>
-        <input type="text" name="address" required>
-        <input type="submit" value="Order"></input>
+        <label for="country">Country</label>
+        <input type="text" name="country" required>
+
+        <label for="county">County</label>
+        <input type="text" name="county">
+
+        <label for="city">City</label>
+        <input type="text" name="city" required>
+
+        <label for="street">Street</label>
+        <input type="text" name="street" required>
+
+        <label for="number">Number</label>
+        <input type="text" name="number" required>
+
+        <button type="submit">Order</button>
     </form>
 </body>
 

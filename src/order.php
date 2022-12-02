@@ -2,7 +2,7 @@
 session_start();
 require 'connect.php';
 require 'remove_cart.php';
-function order($address)
+function order($country, $county, $city, $street, $number)
 {
     $conn = db_connect();
     $token = $_SESSION['token'];
@@ -21,7 +21,8 @@ function order($address)
     $row = $result->fetch_assoc();
     $product = $row['product'];
 
-    $sql = "INSERT INTO orders (user_id, product, address) VALUES ('$id', '$product', '$address');";
+    $sql = "INSERT INTO orders (user_id, product, country, county, city, street, number)
+         VALUES ('$id', '$product', '$country', '$county', '$city', '$street', '$number');";
 
     $conn->query($sql);
     $conn->close();
@@ -31,6 +32,6 @@ function order($address)
     </script>';
 }
 
-order($_GET['address']);
+order($_GET['country'], $_GET['county'], $_GET['city'], $_GET['street'], $_GET['number']);
 remove();
 ?>
