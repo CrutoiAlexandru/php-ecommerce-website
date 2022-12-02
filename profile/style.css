@@ -50,19 +50,18 @@ div > div {
   margin-top: 2vh;
 }
 
-.grid-item {
-  border-radius: 25%;
+.grid-categories {
   margin-right: 0;
   height: 60vh;
   width: 33%;
   background-color: var(--red-alpha);
 }
 
-.grid-item:hover {
+.grid-categories:hover {
   background-color: var(--red);
 }
 
-.grid-item-link {
+.grid-categories-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,29 +72,4 @@ div > div {
 img {
   width: 100%;
   max-height: 100%;
-}
-
-form {
-  background-color: transparent;
-}
-
-form > input {
-  margin: 2px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  font-weight: bold;
-  border: none;
-  background-color: grey;
-  color: var(--background);
-}
-
-form > input:hover {
-  cursor: pointer;
-  background-color: white;
-}
-
-img {
-  margin: 5px;
-  aspect-ratio: 1;
-  border-radius: 50%;
 }

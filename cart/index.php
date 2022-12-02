@@ -46,7 +46,7 @@ require '../src/connect.php';
     ?>
     <h1>There is nothing in your cart, go add something!</h1>
     <a href="/home" style="text-align: center;">
-        <h1>
+        <h1 style="scale:2;">
             <span>Pitshop</span>
         </h1>
     </a>
