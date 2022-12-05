@@ -46,6 +46,37 @@
         header('Location: /login');
         return;
     } ?>
+
+    <h1 style='text-align: center;'><span>Previous orders</span></h1>
+    <div style="width: 100vw; display:flex; justify-content: center;">
+        <div class="line" style="width:90vw;"></div>
+    </div>
+
+    <?php
+    require('../src/connect.php');
+    $conn = db_connect();
+    $token = $_SESSION['token'];
+
+    $sql = "SELECT id FROM users WHERE token = '$token';";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $id = $row['id'];
+
+    $sql = "SELECT * from orders WHERE user_id = '$id';";
+    $result = $conn->query($sql);
+
+    while ($row = $result->fetch_assoc()) {
+        $product = $row['product'];
+        $location = $row['country'] . ', ' . $row['county'] . ', ' . $row['city'] . ', ' . $row['street'] . ', ' . $row['number'];
+        $price = $row['price'];
+        $stage = $row['stage'];
+        echo "<h2 style='text-align: center;'>$product | $location | <span>\$$price</span> | $stage</h2>";
+        echo '<div style="width: 100vw; display:flex; justify-content: center;">
+                <div class="line" style="width:90vw;"></div>
+              </div>';
+    }
+    ?>
+
     <a href="/src/out.php">
         <h1 style="text-align: center;"><span>LogOut</span></h1>
     </a>

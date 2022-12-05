@@ -6,6 +6,11 @@ CREATE TABLE users (
     token VARCHAR(64),
     PRIMARY KEY (id));
 
+INSERT INTO users (username, password, email, token) 
+    VALUES ('user1', 'pas1-sha256', 'email1@gmail.com', 'username+password-sha256');
+
+----------------------------------------------------------------
+
 CREATE TABLE orders (
     id INT NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL, 
@@ -15,12 +20,50 @@ CREATE TABLE orders (
     city VARCHAR(20) NOT NULL,
     street VARCHAR(20) NOT NULL,
     number VARCHAR(10) NOT NULL,
+    price INT NOT NULL,
+    stage VARCHAR(30) NOT NULL,
     PRIMARY KEY (id));
+
+----------------------------------------------------------------
 
 CREATE TABLE cart (
     user_id INT NOT NULL, 
     product VARCHAR(300), 
     PRIMARY KEY (id));
 
-INSERT INTO users (username, password, mail) 
-    VALUES ('user1', 'pas1', 'email1');
+----------------------------------------------------------------
+
+CREATE TABLE products (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(30) NOT NULL,
+    image VARCHAR(30) NOT NULL,
+    description VARCHAR(100) NOT NULL,
+    price INT NOT NULL,
+    PRIMARY KEY (id));
+
+INSERT INTO products (name, image, description, price)
+    VALUES ('beanie1', '/share/img/beanies/beanie1.jpg', 'size: M', 20);
+
+INSERT INTO products (name, image, description, price)
+    VALUES ('beanie2', '/share/img/beanies/beanie2.jpg', 'size: M', 20);
+
+INSERT INTO products (name, image, description, price)
+    VALUES ('beanie3', '/share/img/beanies/beanie3.jpg', 'size: M', 20);
+
+INSERT INTO products (name, image, description, price)
+    VALUES ('hoodie1', '/share/img/hoodies/hoodie1.jpg', 'size: M', 40);
+
+INSERT INTO products (name, image, description, price)
+    VALUES ('hoodie2', '/share/img/hoodies/hoodie2.jpg', 'size: M', 40);
+
+INSERT INTO products (name, image, description, price)
+    VALUES ('hoodie3', '/share/img/hoodies/hoodie3.jpg', 'size: M', 40);
+
+INSERT INTO products (name, image, description, price)
+    VALUES ('sock1', '/share/img/socks/sock1.jpg', 'size: M', 10);
+
+INSERT INTO products (name, image, description, price)
+    VALUES ('sock2', '/share/img/socks/sock2.jpg', 'size: M', 10);
+
+INSERT INTO products (name, image, description, price)
+    VALUES ('sock3', '/share/img/socks/sock3.jpg', 'size: M', 10);

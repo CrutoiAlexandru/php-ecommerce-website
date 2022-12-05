@@ -53,28 +53,70 @@ session_start();
         return;
     } ?>
 
+    <?php
+    require '../../src/connect.php';
+    $conn = db_connect();
+    ?>
+
     <div class="grid">
+        <?php
+        $sql = "SELECT * FROM products WHERE name = 'hoodie1'";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        ?>
+
         <div class="grid-item">
-            <img src="/share/img/hoodies/hoodie1.jpg" alt="hoodie1">
+            <img src="<?php echo $row['image'] ?>" alt="<?php echo $row['name'] ?>">
+            <?php
+            echo $row['description'];
+            echo "\n";
+            echo "\$" . $row['price'];
+            ?>
             <form method="get" action="/src/add_cart.php">
-                <input type="submit" name="product" value="hoodie1"></input>
+                <input type="hidden" name="product" value="<?php echo $row['name'] ?>"></input>
+                <input type="submit" value="Buy"></input>
             </form>
         </div>
 
+        <?php
+        $sql = "SELECT * FROM products WHERE name = 'hoodie2'";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        ?>
+
         <div class="grid-item">
-            <img src="/share/img/hoodies/hoodie2.jpg" alt="hoodie2">
+            <img src="<?php echo $row['image'] ?>" alt="<?php echo $row['name'] ?>">
+            <?php
+            echo $row['description'];
+            echo "\n";
+            echo "\$" . $row['price'];
+            ?>
             <form method="get" action="/src/add_cart.php">
-                <input type="submit" name="product" value="hoodie2"></input>
+                <input type="hidden" name="product" value="<?php echo $row['name'] ?>"></input>
+                <input type="submit" value="Buy"></input>
             </form>
         </div>
 
+        <?php
+        $sql = "SELECT * FROM products WHERE name = 'hoodie3'";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        ?>
+
         <div class="grid-item">
-            <img src="/share/img/hoodies/hoodie3.jpg" alt="hoodie3">
+            <img src="<?php echo $row['image'] ?>" alt="<?php echo $row['name'] ?>">
+            <?php
+            echo $row['description'];
+            echo "\n";
+            echo "\$" . $row['price'];
+            ?>
             <form method="get" action="/src/add_cart.php">
-                <input type="submit" name="product" value="hoodie3"></input>
+                <input type="hidden" name="product" value="<?php echo $row['name'] ?>"></input>
+                <input type="submit" value="Buy"></input>
             </form>
         </div>
     </div>
+    <?php $conn->close() ?>
 </body>
 
 </html>

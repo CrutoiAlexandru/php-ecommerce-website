@@ -54,12 +54,28 @@ require '../src/connect.php';
         return;
     }
 
-    $final = str_replace(',', '<br>', $row['product']);
-    echo "<h1 style='text-align: center;'><span>$final</span></h1>";
+    $product_array = explode(',', $row['product']);
+
+    $total = 0;
+
+    foreach ($product_array as $item) {
+        $sql = "SELECT * FROM products WHERE name = '$item';";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $name = $row['name'];
+        $price = $row['price'];
+        $description = $row['description'];
+        $total += $price;
+        echo "<h1 style='text-align: center;'><span>$name | $description | \$$price</span></h1>";
+    }
+
+    echo "<h1 style='text-align: center;'><span>Total: $total</span></h1>";
     $conn->close();
     ?>
 
     <form method="get" action="/src/order.php">
+        <input type="hidden" name="price" value="<?php echo $total ?>">
+
         <label for="country">Country</label>
         <input type="text" name="country" required>
 
