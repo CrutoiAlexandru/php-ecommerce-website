@@ -16,7 +16,7 @@ CREATE TABLE orders (
     user_id INT NOT NULL, 
     product VARCHAR(300) NOT NULL, 
     country VARCHAR(20) NOT NULL,
-    county VARCHAR(20),
+    county VARCHAR(20) NOT NULL,
     city VARCHAR(20) NOT NULL,
     street VARCHAR(20) NOT NULL,
     number VARCHAR(10) NOT NULL,
@@ -24,12 +24,18 @@ CREATE TABLE orders (
     stage VARCHAR(30) NOT NULL,
     PRIMARY KEY (id));
 
+INSERT INTO orders (user_id, product, country, county, city, street, number, price, stage)
+    VALUES (1, 'beani1,beani2', 'Country', 'County', 'City', 'Street', 82, 120, 'Processing');
+
 ----------------------------------------------------------------
 
 CREATE TABLE cart (
     user_id INT NOT NULL, 
     product VARCHAR(300), 
     PRIMARY KEY (id));
+
+INSERT INTO cart (user_id, product)
+    VALUES (1, 'beani1,sock2');
 
 ----------------------------------------------------------------
 

@@ -80,7 +80,7 @@ require '../src/connect.php';
         <input type="text" name="country" required>
 
         <label for="county">County</label>
-        <input type="text" name="county">
+        <input type="text" name="county" required>
 
         <label for="city">City</label>
         <input type="text" name="city" required>
